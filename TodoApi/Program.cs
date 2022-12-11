@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<TodoContext>(opt =>
-    opt.UseInMemoryDatabase("TodoList")); // use connection string accrding to database - "TodoList" | LinQ helps to switch DB
+    opt.UseSqlite("Data Source= todo.db")); // use connection string accrding to database - "TodoList" | LinQ helps to switch DB
     
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
